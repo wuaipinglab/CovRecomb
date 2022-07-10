@@ -20,7 +20,7 @@ The Local-Version enables users to deploy the core algorithm of CovRcomb on thei
 You need to download the "CovRecomb-Local-Version" zip and use the command line below to install the CovRecomb-Local-Version.
 
 ```
-python3 setup.py install
+python setup.py install
 ```
 
 ## Workflow
