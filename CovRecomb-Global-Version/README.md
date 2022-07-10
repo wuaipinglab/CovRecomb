@@ -32,8 +32,8 @@ The Global-Version is mainly designed for authors to update the global results o
 - Date acquisition and filteration. 
 - Exaction of mutations.
 ```
-python3 fasta_clean_get_FM.py
-python3 pos_norm.py
+python fasta_clean_get_FM.py
+python pos_norm.py
 ```
 
 ### STEP 2: Construction: construct the lineage-defining library
@@ -41,8 +41,8 @@ python3 pos_norm.py
 - Cluster lineages with similar lineage-defining mutations.
 - Parameter settings
 ```
-python3 cluster_lineage.py
-python3 least_number_of_FV.py
+python cluster_lineage.py
+python least_number_of_FV.py
 ```
 
 ### STEP 3 & 4 & 5 
@@ -51,8 +51,8 @@ python3 least_number_of_FV.py
 - STEP 4: Mapping: map samples’ mutations against the predefined matrix
 - STEP 5: Determination: determine the optimal lineage-paired combinations
 ```
-python3 CovRecomb_pipeline.py
-python3 confirm_epi_context.py
+python CovRecomb_pipeline.py
+python confirm_epi_context.py
 ```
 
 ### STEP 6: Identification of independent recombination events
@@ -60,7 +60,7 @@ python3 confirm_epi_context.py
 - Detect the linegae or variant paired patterns among the detected independent recombination events.
 - Draw heatmap(s) for representing the lineage(and variant)-preference of recombination events.
 '''
-python3 identify_patterns.py
+python identify_patterns.py
 Rscript paired_patterns.r
 '''
 
