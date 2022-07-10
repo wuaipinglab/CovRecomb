@@ -11,15 +11,6 @@ Here, based on the hypergeometric-test-based algorithm, we developed an inter-li
 The Local-Version enables users to deploy the core algorithm of CovRcomb on their local computer and to detect the putative recombinants among their customized datasets. Different from the CovRcomb-Global-Version, it takes no account of the epidemiology data of the uploaded genomes or the global epidemiology background, thus it could only analyze the possibility of recombination from the genomic information but could not distinguish the independent recombination events from the transmitted genomes as the Global-Version could. In total, the CovRecomb-Local-Version provides an automatic pipeline to detect the putative inter-lineage recombinants preliminary.
 
 
-## Example input
-<img src="img/Aglined_sequences.png" />
-
-
-## Example output
-<img src="img/putative_recombinants.png" />
-<img src="img/snp_norm.png" />
-
-
 ## Requirements
   - python>=3.6
   - biopython>=1.70
@@ -63,18 +54,11 @@ It was presereved in the address '/CovRecomb-Local-Version/defaults/LDFM_Feb11_2
 
 
 ## Basic Usage
-Start with a .fasta file with sequence(s) that await for recombinants detection. All the sequences included in the file should have been aligned to the reference sequence (reference.fasta) and the reference sequence itself should also be included. The default genome is the Wuhan Hu-1 reference sequence, with its GenBank ID as MN908947.3 and the GISAID accession ID as EPI_ISL_402125. 
-
-Here, we provide an example file in 'CovRecomb-Local-Version/data/example_project/Example_aligned.fasta'
+Start with a .fasta file with sequence(s) that await for recombinants detection. All the sequences included in the file should have been aligned to a reference sequence and the reference sequence itself should also be included. The default genome is the Wuhan Hu-1 reference sequence, with its GenBank ID as MN908947.3 and the GISAID accession ID as EPI_ISL_402125. 
 
 Put your customized file into the  "CovRecomb-Local-Version" folder, and then call:
 ```
 CovRecomb <your_filename.fasta>
-```
-
-Or if your just want to use the example dataset, you could call:
-```
-CovRecomb Example_aligned.fasta
 ```
 
 
