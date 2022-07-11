@@ -34,7 +34,7 @@ python setup.py install
 ### Get the lineage-defining feature mutations
 
 - The lineage-defining feature mutaions (LDFM) file contains the representative lineages of SARS-CoV2 and their respective feature mutations.
-It was presereved in the address '/CovRecomb-Local-Version/defaults/LDFM_Feb11_2022.txt' and could be downloaded online (https://github.com/wuaipinglab/CovRecomb-Local-Version).
+It was presereved in the address 'CovRecomb/CovRecomb-Local-Version/defaults/LDFM_Feb11_2022.txt' and could be downloaded online.
 
 ### CovRecomb analysis
 
