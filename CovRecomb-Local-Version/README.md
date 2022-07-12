@@ -75,7 +75,7 @@ The output files of the example analysis will be presented in ```CovRecomb-Local
 - The first output file is "snp_norm.txt", which records the normalized mutations for each input sequence.
 <img src="img/snp_norm.png" />
 - The second output file is "putative_recombinants.csv", which records the identified putative recombinants and their corresponding parental lineages and feature mutation patterns.
-<img src="img/putative_recombinants.png.png" />
+<img src="img/putative_recombinants.png" />
 
 
 ## Advanced Usage
