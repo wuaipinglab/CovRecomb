@@ -2,7 +2,7 @@
  * @Author: Sonia-Ljy lijysunny@sina.com
  * @Date: 2022-07-07 14:45:55
  * @LastEditors: Sonia-Ljy lijysunny@sina.com
- * @LastEditTime: 2022-07-07 16:34:18
+ * @LastEditTime: 2022-07-12 15:22:20
  * @FilePath: /CovRecomb-Global-Version/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -47,9 +47,9 @@ python least_number_of_FV.py
 
 ### STEP 3 & 4 & 5 
 - Use the core algorithm of CovRecomb to identify inter-lineage recombinants.
-- STEP 3: Predefinition: predefine a lineage-paired score matrix for each sample
-- STEP 4: Mapping: map samples’ mutations against the predefined matrix
-- STEP 5: Determination: determine the optimal lineage-paired combinations
+STEP 3: Predefinition: predefine a lineage-paired score matrix for each sample
+STEP 4: Mapping: map samples’ mutations against the predefined matrix
+STEP 5: Determination: determine the optimal lineage-paired combinations
 ```
 python CovRecomb_pipeline.py
 python confirm_epi_context.py
