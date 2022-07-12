@@ -58,8 +58,24 @@ Start with a .fasta file with sequence(s) that await for recombinants detection.
 
 Put your customized file into the  "CovRecomb-Local-Version" folder, and then call:
 ```
-CovRecomb <your_filename.fasta>
+CovRecomb <your_filename.fasta> -r <"genome name of your reference sequence">
 ```
+
+### Example input
+Here, we provide an example file in ```CovRecomb-Local-Version/sequence_aligned.fasta``` or ```CovRecomb-Local-Version/data/example_project/sequence_aligned.fasta```, you can use it to better understand the workflow by calling:
+```
+CovRecomb sequence_aligned.fasta -r "MN908947.3"
+```
+
+### Example running process
+<img src="img/running_process.png" />
+
+### Example output
+The output files of the example analysis will be presented in ```CovRecomb-Local-Version/example_project/output_files/```.
+- The first output file is "snp_norm.txt", which records the normalized mutations for each input sequence.
+<img src="img/snp_norm.png" />
+- The second output file is "putative_recombinants.csv", which records the identified putative recombinants and their corresponding parental lineages and feature mutation patterns.
+<img src="img/putative_recombinants.png.png" />
 
 
 ## Advanced Usage
