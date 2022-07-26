@@ -4,7 +4,6 @@ Date: 2022-06-13 14:15:51
 LastEditors: Sonia-Ljy lijysunny@sina.com
 LastEditTime: 2022-07-07 22:09:41
 FilePath: /undefined/home/soniali/Desktop/03_recom_0531/0_code/parameters.py
-Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 '''
 
 import pandas as pd
@@ -128,10 +127,10 @@ def get_time_epi(dct, out_date, time_epi):
 
 def left_right_lin(index, df_ABC):
     mode_epi = df_ABC.loc[index, "mutation_pattern"]
-    if mode_epi.startswith("XXXX") or mode_epi.startswith("BXXXX") or mode_epi.startswith("YYXXXX") or mode_epi.startswith("YYYXXXX"):
+    if mode_epi.startswith("XXXX") or mode_epi.startswith("YXXXX") or mode_epi.startswith("YYXXXX") or mode_epi.startswith("YYYXXXX"):
         left_lin = del_star(df_ABC.loc[index, "lineage_X"])
         right_lin = del_star(df_ABC.loc[index, "lineage_Y"])
-    elif mode_epi.startswith("YYYY") or mode_epi.startswith("AYYYY") or mode_epi.startswith("XXYYYY") or mode_epi.startswith("XXXYYYY"):
+    elif mode_epi.startswith("YYYY") or mode_epi.startswith("XYYYY") or mode_epi.startswith("XXYYYY") or mode_epi.startswith("XXXYYYY"):
         left_lin = del_star(df_ABC.loc[index, "lineage_Y"])
         right_lin = del_star(df_ABC.loc[index, "lineage_X"])
 
@@ -156,7 +155,6 @@ def find_AB_ances(candidate_par, left_mutation, variants_all, pango_lineage, lef
     return A_flag, epi_ances
 
 
-###对于作为模式代表的每一个重组样本，更新它的model，并根据祖先AB输出新的ABfeature文件到bk_plot_mode文件夹中，以备后续画断点图
 def extract_AB_bk(denovo_path, file):
     df_denovo = pd.read_csv(denovo_path + file)
     if "bk2" in file:
