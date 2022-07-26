@@ -59,10 +59,10 @@ python confirm_epi_context.py
 - Detect the independent recombination events from all the identified putative recombinants.
 - Detect the linegae or variant paired patterns among the detected independent recombination events.
 - Draw heatmap(s) for representing the lineage(and variant)-preference of recombination events.
-'''
+```
 python identify_patterns.py
 Rscript paired_patterns.r
-'''
+```
 
 
 ## What is the Simulation-Test here?
