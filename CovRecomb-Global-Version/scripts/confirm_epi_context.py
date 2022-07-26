@@ -87,7 +87,6 @@ def main():
             i_2 = i.strip().split(',')
             cluster_lin[i_2[0]] = set(i_2[1:-1])
 
-    # 判断lineage各自属于哪个cluster中
     lin_cluster = {}
     for c in cluster_lin:
         for l in cluster_lin[c]:
