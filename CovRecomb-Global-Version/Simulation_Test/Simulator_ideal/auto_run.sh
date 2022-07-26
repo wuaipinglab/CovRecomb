@@ -1,15 +1,5 @@
 #!/bin/bash
-###
- # @Author: Sonia-Ljy lijysunny@sina.com
- # @Date: 2022-07-07 14:48:45
- # @LastEditors: Sonia-Ljy lijysunny@sina.com
- # @LastEditTime: 2022-07-07 22:11:53
- # @FilePath: /Simulation_Test/Simulator_ideal/auto_run.sh
- # @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-### 
-
 cd /home/soniali/Desktop/CovRecomb-Global-Version/Simulation_Test/Simulator_ideal
-
 
 echo "\n Start for simulation datasets generation and Comparison between the 3SEQ and CovRecomb method.\n"
 
