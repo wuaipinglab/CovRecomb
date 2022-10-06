@@ -64,6 +64,13 @@ python identify_patterns.py
 Rscript paired_patterns.r
 ```
 
+### STEP 7: Identification of the breakpoint distribution with the help of 3SEQ
+- Detect the breakpoint distribution of the independent recombination events with the help of 3SEQ.
+
+```
+python identify_breakpoints.py 
+```
+
 
 ## What is the Simulation-Test here?
 A forward-evolution simulator called [CovSimulator](https://github.com/weigangq/cov-db/blob/master/scripts/CovSimulator.py) (Saymon Akther, 2021) was used to generate the simulation recombination dataset by considering the SARS-CoV-2 genome evolution and transmission. Based on the previous simulator, we made minor changes to meet the requirements of our simulation test. Here, the simulation was initialized with a population of N genomes as seeds, which also represent the initial composition of viral lineages. Each genome sequence composed of 29,903 nt of A, T, C, and G bases. Predefined number of differential mutations existed among viral sequences. The simulation test in essence is a test under various combinations of different sample sizes (generations) and the different number of differential feature mutations between lineages.
