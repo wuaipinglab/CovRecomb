@@ -1,4 +1,3 @@
-
 '''
 Function: Detect the breakpoint distributions of independent recombination events by the help of the 3SEQ method.
 
