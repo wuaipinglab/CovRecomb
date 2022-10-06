@@ -26,7 +26,7 @@ The Global-Version is mainly designed for authors to update the global results o
 
 
 ## Workflow
-<img src="img/workflow.png"/>
+<img src="img/workflow.pdf"/>
 
 ### STEP 1: Transformation: transform the full genome to the mutational sites
 - Date acquisition and filteration. 
