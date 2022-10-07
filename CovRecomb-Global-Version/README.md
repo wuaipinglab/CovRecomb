@@ -1,11 +1,4 @@
-<!--
- * @Author: Sonia-Ljy lijysunny@sina.com
- * @Date: 2022-07-07 14:45:55
- * @LastEditors: Sonia-Ljy lijysunny@sina.com
- * @LastEditTime: 2022-07-12 15:23:54
- * @FilePath: /CovRecomb-Global-Version/README.md
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
--->
+
 # CovRecomb-Global-Version
 To identify the putative inter-lineage recombinants among global sequencing SARS-CoV-2 genomes.
 
@@ -73,7 +66,7 @@ python identify_breakpoints.py
 
 
 ## What is the Simulation-Test here?
-A forward-evolution simulator called [CovSimulator](https://github.com/weigangq/cov-db/blob/master/scripts/CovSimulator.py) (Saymon Akther, 2021) was used to generate the simulation recombination dataset by considering the SARS-CoV-2 genome evolution and transmission. Based on the previous simulator, we made minor changes to meet the requirements of our simulation test. Here, the simulation was initialized with a population of N genomes as seeds, which also represent the initial composition of viral lineages. Each genome sequence composed of 29,903 nt of A, T, C, and G bases. Predefined number of differential mutations existed among viral sequences. The simulation test in essence is a test under various combinations of different sample sizes (generations) and the different number of differential feature mutations between lineages.
+A forward-evolution simulator called [CovSimulator](https://github.com/weigangq/cov-db/blob/master/scripts/CovSimulator.py) (Saymon Akther, 2021) was used to generate the simulation recombination dataset by considering the SARS-CoV-2 genome evolution and transmission. Based on the previous simulator, we made changes to meet the requirements of our simulation test. The simulation was divided into two stages: (1) the initial lineages generation process and (2) the lineage evolution process. In the first stage, starting from the SARS CoV-2 Wuhan strain, the genome would experience n times of generation (G) to generate 2^n^ sequences. Then we randomly sampled several sequences in the last generation and took them as the initial composition of viral lineages. In the second stage, apart from the similar evolution process as stage one, homologous inter-lineage and intra-lineage recombination would occur with a Poisson distributed rate of population size for each generation. We ensured that at least one inter-lineage recombinant and one intra-lineage recombinant occurred at each generation regardless of the population size. Notably, during each generation in the two stages, all genomes would mutate at random positions with the number of sites following the Poisson distribution. A preset proportion of sequences would share a preset number of homologous mutations, which help to integrate convergent evolution factor into the simulation.
 
 To obtain a more realistic simulation of sample sequencing, two simulation conditions were carried out, including the ideal simulation and the analog simulation. The ideal simulation extracted all the generated sequences in each generation while the analog simulation randomly selected sequences in a preset proportion. The main difference between these two simulations is that the parental lineages of the extracted recombinants may not be sampled simultaneously in the analog simulation which is more like that of the real world. The missing parental lineages inevitably increased the difficulty for all recombinant detection methods, including CovRecomb and 3SEQ.
 
