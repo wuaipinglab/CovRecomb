@@ -1,10 +1,25 @@
-<!--
- * @Author: Sonia-Ljy lijysunny@sina.com
- * @Date: 2022-07-11 11:08:23
- * @LastEditors: Sonia-Ljy lijysunny@sina.com
- * @LastEditTime: 2022-07-12 15:25:38
- * @FilePath: /undefined/home/soniali/Desktop/03_recom_0531/0709_CovRecomb/CovRecomb/README.md
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE.
--->
 # CovRecomb
 A method to detect the inter-lineage recombinant of SARS-CoV-2 genomes.
+
+
+## Overview
+The co-circulation of multiple SARS-CoV-2 lineages and sub-lineages worldwide has provided a considerable background population for recombination events. However, the unprecedented accumulation of SARS-CoV-2 genomes also raised significant challenges for traditional recombination detection methods when aligning thousands of polymorphic sites.
+
+Here, based on the hypergeometric-test-based algorithm, we developed an inter-lineage recombinant detection method named CovRecomb, which significantly decreases the computational cost because of its transformation from genomic comparison into the assignment of feature mutations.
+
+
+## CovRecomb-Global-Version
+To identify the putative inter-lineage recombinants among global sequencing SARS-CoV-2 genomes.
+
+The Global-Version is designed for authors to update the global results of SARS-CoV-2 recombinants. Different from the CovRcomb-Local-Version, it takes account of the epidemiology data of the analyzing genomes, thus it could not only identify the possibility of recombination from the genomic information but also could distinguish the independent recombination events based on the global epidemiology background. In total, the CovRecomb-Global-Version provides a semi-automatic pipeline for authors to identify recombinants and detect recombination events.
+
+
+### CovRecomb-Local-Version?
+To identify the putative inter-lineage SARS-CoV-2 recombinants among consensus sequences inputted by users.
+
+The Local-Version enables users to deploy the core algorithm of CovRcomb on their local computer and to detect the putative recombinants among their customized datasets. Different from the CovRcomb-Global-Version, it takes no account of the epidemiology data of the uploaded genomes or the global epidemiology background, thus it could only analyze the possibility of recombination from the genomic information but could not distinguish the independent recombination events from the transmitted genomes as the Global-Version could. In total, the CovRecomb-Local-Version provides an automatic pipeline to detect the putative inter-lineage recombinants preliminary.
+
+
+### Acknowledgements
+We sincerely thank the Global Intiative on Sharing All Influenza Data ([GISAID](https://www.gisaid.org/)) and all data contributors for making SARS-CoV-2 genomic sequence data available to the public and open science. Besides, we would like to express our special thanks to the [CovSimulator](https://github.com/weigangq/cov-db/blob/master/scripts/CovSimulator.py) developers for their contributions in the field of simulation testing.
+
