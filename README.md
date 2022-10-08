@@ -13,8 +13,11 @@ To identify the putative inter-lineage recombinants among global sequencing SARS
 
 The Global-Version is designed for authors to update the global results of SARS-CoV-2 recombinants. Different from the CovRcomb-Local-Version, it takes account of the epidemiology data of the analyzing genomes, thus it could not only identify the possibility of recombination from the genomic information but also could distinguish the independent recombination events based on the global epidemiology background. In total, the CovRecomb-Global-Version provides a semi-automatic pipeline for authors to identify recombinants and detect recombination events.
 
+### Framework
+<img src="framework.png"/>
 
-## CovRecomb-Local-Version?
+
+## CovRecomb-Local-Version
 To identify the putative inter-lineage SARS-CoV-2 recombinants among consensus sequences inputted by users.
 
 The Local-Version enables users to deploy the core algorithm of CovRcomb on their local computer and to detect the putative recombinants among their customized datasets. Different from the CovRcomb-Global-Version, it takes no account of the epidemiology data of the uploaded genomes or the global epidemiology background, thus it could only analyze the possibility of recombination from the genomic information but could not distinguish the independent recombination events from the transmitted genomes as the Global-Version could. In total, the CovRecomb-Local-Version provides an automatic pipeline to detect the putative inter-lineage recombinants preliminary.
