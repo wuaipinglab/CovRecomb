@@ -22,8 +22,8 @@ The Global-Version is designed for authors to update the global results of SARS-
 ### Framework
 <img src="img/framework.png"/>
 
-### Implementation steps
-Click the ([CovRecomb-Global-Version folder](https://github.com/wuaipinglab/CovRecomb/tree/main/CovRecomb-Global-Version)) to see the specific installation and use steps for the CovRecomb-Global-Version.
+### Usage details
+Click the ([CovRecomb-Global-Version](https://github.com/wuaipinglab/CovRecomb/tree/main/CovRecomb-Global-Version)) folder to see the specific installation and usage steps for the CovRecomb-Global-Version.
 
 
 ## CovRecomb-Local-Version
@@ -31,8 +31,8 @@ To identify the putative inter-lineage SARS-CoV-2 recombinants among consensus s
 
 The Local-Version enables users to deploy the core algorithm of CovRcomb on their local computer and to detect the putative recombinants among their customized datasets. Different from the CovRcomb-Global-Version, it takes no account of the epidemiology data of the uploaded genomes or the global epidemiology background, thus it could only analyze the possibility of recombination from the genomic information but could not distinguish the independent recombination events from the transmitted genomes as the Global-Version could. In total, the CovRecomb-Local-Version provides an automatic pipeline to detect the putative inter-lineage recombinants preliminary.
 
-### Implementation steps
-Click the ([CovRecomb-Local-Version folder](https://github.com/wuaipinglab/CovRecomb/tree/main/CovRecomb-Local-Version)) to see the specific installation and use steps for the CovRecomb-Local-Version.
+### Usage details
+Click the ([CovRecomb-Local-Version](https://github.com/wuaipinglab/CovRecomb/tree/main/CovRecomb-Local-Version)) folder to see the specific installation and usage steps for the CovRecomb-Local-Version.
 
 
 ## Acknowledgements
