@@ -3,12 +3,6 @@
 To identify the putative inter-lineage recombinants among global sequencing SARS-CoV-2 genomes.
 
 
-## Overview
-The co-circulation of multiple SARS-CoV-2 lineages and sub-lineages worldwide has provided a considerable background population for recombination events. However, the unprecedented accumulation of SARS-CoV-2 genomes also raised significant challenges for traditional recombination detection methods when aligning thousands of polymorphic sites.
-
-Here, based on the hypergeometric-test-based algorithm, we developed an inter-lineage recombinant detection method named CovRecomb, which significantly decreases the computational cost because of its transformation from genomic comparison into the assignment of feature mutations.
-
-
 ## What is the CovRecomb-Global-Version?
 The Global-Version is mainly designed for authors to update the global results of SARS-CoV-2 recombinants. Different from the CovRcomb-Local-Version, it takes account of the epidemiology data of the analyzing genomes, thus it could not only identify the possibility of recombination from the genomic information but also could distinguish the independent recombination events based on the global epidemiology background. In total, the CovRecomb-Global-Version provides a semi-automatic pipeline for authors to identify recombinants and detect recombination events.
 
@@ -20,6 +14,7 @@ The Global-Version is mainly designed for authors to update the global results o
 
 ## Workflow
 <img src="img/workflow.png"/>
+
 
 ### STEP 1: Transformation: transform the full genome to the mutational sites
 - Date acquisition and filteration. 
