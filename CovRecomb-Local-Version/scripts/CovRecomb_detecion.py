@@ -77,6 +77,14 @@ def calcul_bk(lin_A_draw, lin_B_draw, Lineage_v, epiV):
     return lin_record, UA_mutate_unique, UB_mutate_unique, shared_mut, denovo_mut
 
 
+def qu_cluster(lin_A):
+    if "cluster" in lin_A:
+        renew_name = lin_A.split("_")[1]+"*"
+    else:
+        renew_name = lin_A
+    return renew_name
+
+
 def recombination_detection(len_UAB, max_bk_num, must_inA, must_inB, linA_list_deep, Strain_list_def,\
     variants_all, feature_mutations, Lineage_v, mutaions_num, output_file):
     '''
@@ -177,16 +185,17 @@ def recombination_detection(len_UAB, max_bk_num, must_inA, must_inB, linA_list_d
                     lin_record, UA_mutate_unique, UB_mutate_unique, shared_mut, denovo_mut = calcul_bk(
                         lin_A_draw, lin_B_draw, Lineage_v, epiV)
 
-                    numA = unique_lin(linA_list_deep, Lineage_v,
-                                      UA_mutate_unique)
-                    numB = unique_lin(linA_list_deep, Lineage_v,
-                                      UB_mutate_unique)
+                    lin_A_draw, lin_B_draw = qu_cluster(lin_A_draw), qu_cluster(lin_B_draw)
+                    # numA = unique_lin(linA_list_deep, Lineage_v,
+                    #                   UA_mutate_unique)
+                    # numB = unique_lin(linA_list_deep, Lineage_v,
+                    #                   UB_mutate_unique)
 
-                    if numA == numB == 1:
-                        with open(output_file, "a+") as file_epi:
-                            file_epi.write(epi + "," + lin_A_draw + "," +
-                                           lin_B_draw + "," + lin_record +
-                                           "," + "/".join(UA_mutate_unique) +
-                                           "," + "/".join(UB_mutate_unique) +
-                                           "," + "/".join(shared_mut) + "," +
-                                           "/".join(denovo_mut) + "\n")
+                    # if numA == numB == 1:
+                    with open(output_file, "a+") as file_epi:
+                        file_epi.write(epi + "," + lin_A_draw + "," +
+                                        lin_B_draw + "," + lin_record +
+                                        "," + "/".join(UA_mutate_unique) +
+                                        "," + "/".join(UB_mutate_unique) +
+                                        "," + "/".join(shared_mut) + "," +
+                                        "/".join(denovo_mut) + "\n")

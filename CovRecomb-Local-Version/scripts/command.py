@@ -337,7 +337,7 @@ def main():
     os.chdir(os.getcwd() + "/")
 
     if len(Self_snp) <= cor_num:
-        recombination_detection(len_UAB, must_inA, must_inB, linA_list,
+        recombination_detection(len_UAB, max_bk_num, must_inA, must_inB, linA_list,
                                 Self_snp, Self_variants, feature_mutations,
                                 Lineage_v, mutaions_num, output_file)
     else:
