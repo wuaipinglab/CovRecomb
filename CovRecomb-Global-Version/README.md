@@ -49,6 +49,7 @@ python confirm_epi_context.py
 - Draw heatmap(s) for representing the lineage(and variant)-preference of recombination events.
 ```
 python identify_patterns.py
+python identify_breakpoints.py
 Rscript paired_patterns.r
 ```
 
