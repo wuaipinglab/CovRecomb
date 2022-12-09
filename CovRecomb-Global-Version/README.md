@@ -15,6 +15,7 @@ The CovRecomb-Global-Version has been tested on the Linux: Ubuntu 20.04 system.
 ### Dependencies
   - python>=3.6
   - biopython>=1.70
+  - R>=3.6.0
 
 ### Python Dependencies
 The CovRecomb-Global-Version mainly depends on the Python scientific stack.
@@ -27,6 +28,13 @@ datetime
 Bio
 multiprocessing
 ```
+### R Dependencies
+The CovRecomb-Global-Version used the R version 4.1.2 to run ```paired_patterns.r```. The following R packages are needed.
+```
+optparse
+ggplot2
+```
+
 
 ## Workflow
 <img src="img/workflow.png"/>
