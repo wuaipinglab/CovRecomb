@@ -86,7 +86,7 @@ python identify_breakpoints.py
 
 
 ## Demo for the core algorithm in CovRecomb pipeline
-The ```/CovRecomb-Global-Version/demo_for_hypergeometric/``` folder presents an example of how the hypergeometric distribution functions in CovRecomb pipeline. Run the following code and the output will be show in ```/CovRecomb-Global-Version/demo_for_hypergeometric/data/2022_02_12/2_recomb_identified/0_putative_recombinants.csv```
+The ```/CovRecomb-Global-Version/demo_for_hypergeometric/``` folder presents an example of how the hypergeometric distribution functions in CovRecomb pipeline. Run the following code and the output will be same as ```/CovRecomb-Global-Version/demo_for_hypergeometric/data/2022_02_12/2_recomb_identified/0_putative_recombinants_example.csv```
 
 ```
 cd ./CovRecomb/CovRecomb-Global-Version/demo_for_hypergeometric/scripts/
