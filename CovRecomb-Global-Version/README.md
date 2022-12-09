@@ -18,14 +18,15 @@ The CovRecomb-Global-Version has been tested on the Linux: Ubuntu 20.04 system.
 
 ### Python Dependencies
 The CovRecomb-Global-Version mainly depends on the Python scientific stack.
-  - argparse
-  - pandas
-  - numpy
-  - collections
-  - datetime
-  - Bio
-  - multiprocessing
-
+```
+argparse
+pandas
+numpy
+collections
+datetime
+Bio
+multiprocessing
+```
 
 ## Workflow
 <img src="img/workflow.png"/>

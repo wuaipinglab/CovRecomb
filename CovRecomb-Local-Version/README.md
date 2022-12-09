@@ -17,11 +17,12 @@ The CovRecomb-Local-Version has been tested on the Linux: Ubuntu 20.04 system.
 
 ### Python Dependencies
 The CovRecomb-Local-Version mainly depends on the Python scientific stack.
-  - argparse
-  - pandas
-  - Bio
-  - multiprocessing
-
+```
+argparse
+pandas
+Bio
+multiprocessing
+```
 
 ## Install 
 You need to download the "CovRecomb-Local-Version" zip and use the command line below to install the CovRecomb-Local-Version.
