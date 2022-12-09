@@ -80,10 +80,10 @@ CovRecomb sequence_aligned.fasta -r "MN908947.3"
 <img src="img/running_process.png" />
 
 ### Example output
-The output files of the example analysis will be presented in ```CovRecomb-Local-Version/example_project/output_files/```.
-- The first output file is "snp_norm.txt", which records the normalized mutations for each input sequence.
+The output files of the example analysis will be presented in ```CovRecomb-Local-Version/```, the example output file are already presented in ```CovRecomb-Local-Version/example_project/output_files/```.
+- The first output file is "snp_norm.txt", the same as the ```CovRecomb-Local-Version/snp_norm_XA.txt``` file, which records the normalized mutations for each input sequence.
 <img src="img/snp_norm.png" />
-- The second output file is "putative_recombinants.csv", which records the identified putative recombinants and their corresponding parental lineages and feature mutation patterns.
+- The second output file is "putative_recombinants.csv", the same as the ```CovRecomb-Local-Version/putative_recombinants_XA.csv``` file, which records the identified putative recombinants and their corresponding parental lineages and feature mutation patterns.
 <img src="img/putative_recombinants.png" />
 
 
