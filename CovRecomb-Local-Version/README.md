@@ -28,7 +28,8 @@ multiprocessing
 You need to download the "CovRecomb-Local-Version" zip and use the command line below to install the CovRecomb-Local-Version.
 
 ```
-python setup.py install
+cd CovRecomb-Local-Version
+sudo python3 setup.py install
 ```
 
 ## Workflow
