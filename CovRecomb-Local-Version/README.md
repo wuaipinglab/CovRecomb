@@ -7,8 +7,20 @@ The Local-Version enables users to deploy the core algorithm of CovRcomb on thei
 
 
 ## Requirements
+
+### OS requirements:
+The CovRecomb-Local-Version has been tested on the Linux: Ubuntu 20.04 system.
+
+### Dependencies
   - python>=3.6
   - biopython>=1.70
+
+### Python Dependencies
+The CovRecomb-Local-Version mainly depends on the Python scientific stack.
+  - argparse
+  - pandas
+  - Bio
+  - multiprocessing
 
 
 ## Install 

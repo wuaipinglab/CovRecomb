@@ -8,8 +8,23 @@ The Global-Version is designed for authors to update the global results of SARS-
 
 
 ## Requirements
+
+### OS requirements:
+The CovRecomb-Global-Version has been tested on the Linux: Ubuntu 20.04 system.
+
+### Dependencies
   - python>=3.6
   - biopython>=1.70
+
+### Python Dependencies
+The CovRecomb-Global-Version mainly depends on the Python scientific stack.
+  - argparse
+  - pandas
+  - numpy
+  - collections
+  - datetime
+  - Bio
+  - multiprocessing
 
 
 ## Workflow

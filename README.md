@@ -9,9 +9,13 @@ Here, based on the hypergeometric-test-based algorithm, we developed an inter-li
 
 
 ## Requirements
+
+### OS requirements:
+The CovRecomb has been tested on the Linux: Ubuntu 20.04 system.
+
+### Dependencies
   - python>=3.6
   - biopython>=1.70
-
 
 ## CovRecomb-Global-Version
 To identify the putative inter-lineage recombinants among global sequenced SARS-CoV-2 genomes.
