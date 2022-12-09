@@ -113,7 +113,7 @@ def main():
         
     for i in range(1,cor_num+1):
         eval("p"+str(i)).join()
-        print("\n","p1 elapsed time： %.8s s" % (time.time() - maintime),"\n")
+        print("\n","p"+str(i)+ "elapsed time： %.8s s" % (time.time() - maintime),"\n")
 
     print("\n","----------------------- Analysis completed -----------------------","\n")
     
