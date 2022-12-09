@@ -18,7 +18,7 @@ def main():
     
     parser.add_argument("-dir", "--dirpath", default="/home/soniali/Desktop/CovRecomb-Global-Version/data/2022_02_12/", help="The totoal folder address of this work.\nDefault: /home/soniali/Desktop/CovRecomb-Global-Version/data/2022_02_12")
     parser.add_argument("-b", "--breakpoint_number", default=2, help="The maximum acceptable number of breakpoints among putative recombinants.\nDefault: 2")
-    parser.add_argument("-t", "--threshold", default=4, hel ="The least number of sequential feature mutations.\nDefault: 4")
+    parser.add_argument("-t", "--threshold", default=4, help ="The least number of sequential feature mutations.\nDefault: 4")
     parser.add_argument("-c", "--core_number", default=16, help="The number of cores used while computation running.\nDefault: 4")
     parser.add_argument("-o", "--output_file", default="0_putative_recombinants.csv", help="The filename of the output file with identified putative recombinants and their parental sequences.\nDefault: putative_recombinants.csv\n")
     args = parser.parse_args()
