@@ -94,108 +94,111 @@ def recombination_detection(len_UAB, max_bk_num, must_inA, must_inB, linA_list_d
     from function_set import sort_humanly, min_pairs, sort_humanly, bk_count, obtain_pattern, parental_lineage
 
     for epi in Strain_list_def:
-        epi_record = {}
-        epiV = variants_all[epi]
-        epi_feat = len(set(epiV) & set(feature_mutations))
-
-        if epi_feat < 2*len_UAB:
-            continue
-        else:
-            # P-value for Non-recombination
-            pmin = 1
-            for lin_A in linA_list_deep:
-                all_AA = len(Lineage_v[lin_A]) * 2
-                all_AA_epi = len(set(Lineage_v[lin_A]) & set(epiV))
-
-                pVal = hypergeom.sf(all_AA_epi - 1, mutaions_num, all_AA,
-                                    epi_feat)
-                if pVal >= pmin:
-                    continue
-                else:
-                    pmin = pVal
-                    epi_record[str(lin_A) + "_" + str(lin_A)] = pVal
-
-            # the least p-value for the Non-recombinant
-            most_one = min_pairs(epi_record)
-            pmin = most_one[0][1]
-
+        try:
             epi_record = {}
-            for mo in most_one:
-                epi_record[mo[0]] = mo[1]
+            epiV = variants_all[epi]
+            epi_feat = len(set(epiV) & set(feature_mutations))
 
-            # P-value for Recombinant (A+B/A+B+A)
-            A_already = []
-            for A in linA_list_deep:
-                A_already.append(A)
-                A_epi = set(Lineage_v[A]) & set(epiV)
-                if len(A_epi) < len_UAB:
-                    continue
-                else:
-                    aftertime_linB = set(linA_list_deep) - set(A_already)
-                    for B in aftertime_linB:
-                        B_epi = set(Lineage_v[B]) & set(epiV)
-
-                        if len(B_epi) < len_UAB or len(B_epi -
-                                                       A_epi) < len_UAB or len(
-                                                           A_epi -
-                                                           B_epi) < len_UAB:
-                            continue
-                        else:
-                            all_AB = len(Lineage_v[A]) + len(Lineage_v[B])
-                            all_AB_epi = len((set(Lineage_v[A])
-                                              | set(Lineage_v[B])) & set(epiV))
-
-                            pVal = hypergeom.sf(all_AB_epi - 1, mutaions_num,
-                                                all_AB, epi_feat)
-                            if pVal > pmin:
-                                continue
-                            else:
-                                pmin = pVal
-                                unique_A = A_epi - B_epi
-                                unique_B = B_epi - A_epi
-
-                                if len(unique_A) < len_UAB or len(
-                                        unique_B) < len_UAB:
-                                    continue
-                                else:
-                                    union_AB_set = set(Lineage_v[A]) ^ set(
-                                        Lineage_v[B])
-                                    AB_epi = sort_humanly(
-                                        list(union_AB_set & set(epiV)))
-                                    recom_pattern = obtain_pattern(
-                                        AB_epi, unique_A, unique_B)
-                                    if (must_inA not in recom_pattern) or (
-                                            must_inB not in recom_pattern):
-                                        continue
-                                    else:
-                                        change = bk_count(recom_pattern)
-                                        if change > max_bk_num:
-                                            continue
-                                        else:
-                                            epi_record[str(A) + "_" +
-                                                       str(B)] = pVal
-            most_two = min_pairs(epi_record)
-
-            if most_one == most_two:  # Mostly, this sample is non-recombinant
+            if epi_feat < 2*len_UAB:
                 continue
             else:
-                epiV = sort_humanly(epiV)
-                for M in most_two:
-                    lin_A_draw, lin_B_draw = parental_lineage(M)
-                    lin_record, UA_mutate_unique, UB_mutate_unique, shared_mut, denovo_mut = calcul_bk(
-                        lin_A_draw, lin_B_draw, Lineage_v, epiV)
+                # P-value for Non-recombination
+                pmin = 1
+                for lin_A in linA_list_deep:
+                    all_AA = len(Lineage_v[lin_A]) * 2
+                    all_AA_epi = len(set(Lineage_v[lin_A]) & set(epiV))
 
-                    lin_A_draw, lin_B_draw = qu_cluster(lin_A_draw), qu_cluster(lin_B_draw)
-                    # numA = unique_lin(linA_list_deep, Lineage_v,
-                    #                   UA_mutate_unique)
-                    # numB = unique_lin(linA_list_deep, Lineage_v,
-                    #                   UB_mutate_unique)
+                    pVal = hypergeom.sf(all_AA_epi - 1, mutaions_num, all_AA,
+                                        epi_feat)
+                    if pVal >= pmin:
+                        continue
+                    else:
+                        pmin = pVal
+                        epi_record[str(lin_A) + "_" + str(lin_A)] = pVal
 
-                    # if numA == numB == 1:
-                    with open(output_file, "a+") as file_epi:
-                        file_epi.write(epi + "," + lin_A_draw + "," +
-                                        lin_B_draw + "," + lin_record +
-                                        "," + "/".join(UA_mutate_unique) +
-                                        "," + "/".join(UB_mutate_unique) +
-                                        "," + "/".join(shared_mut) + "," +
-                                        "/".join(denovo_mut) + "\n")
+                # the least p-value for the Non-recombinant
+                most_one = min_pairs(epi_record)
+                pmin = most_one[0][1]
+
+                epi_record = {}
+                for mo in most_one:
+                    epi_record[mo[0]] = mo[1]
+
+                # P-value for Recombinant (A+B/A+B+A)
+                A_already = []
+                for A in linA_list_deep:
+                    A_already.append(A)
+                    A_epi = set(Lineage_v[A]) & set(epiV)
+                    if len(A_epi) < len_UAB:
+                        continue
+                    else:
+                        aftertime_linB = set(linA_list_deep) - set(A_already)
+                        for B in aftertime_linB:
+                            B_epi = set(Lineage_v[B]) & set(epiV)
+
+                            if len(B_epi) < len_UAB or len(B_epi -
+                                                        A_epi) < len_UAB or len(
+                                                            A_epi -
+                                                            B_epi) < len_UAB:
+                                continue
+                            else:
+                                all_AB = len(Lineage_v[A]) + len(Lineage_v[B])
+                                all_AB_epi = len((set(Lineage_v[A])
+                                                | set(Lineage_v[B])) & set(epiV))
+
+                                pVal = hypergeom.sf(all_AB_epi - 1, mutaions_num,
+                                                    all_AB, epi_feat)
+                                if pVal > pmin:
+                                    continue
+                                else:
+                                    pmin = pVal
+                                    unique_A = A_epi - B_epi
+                                    unique_B = B_epi - A_epi
+
+                                    if len(unique_A) < len_UAB or len(
+                                            unique_B) < len_UAB:
+                                        continue
+                                    else:
+                                        union_AB_set = set(Lineage_v[A]) ^ set(
+                                            Lineage_v[B])
+                                        AB_epi = sort_humanly(
+                                            list(union_AB_set & set(epiV)))
+                                        recom_pattern = obtain_pattern(
+                                            AB_epi, unique_A, unique_B)
+                                        if (must_inA not in recom_pattern) or (
+                                                must_inB not in recom_pattern):
+                                            continue
+                                        else:
+                                            change = bk_count(recom_pattern)
+                                            if change > max_bk_num:
+                                                continue
+                                            else:
+                                                epi_record[str(A) + "_" +
+                                                        str(B)] = pVal
+                most_two = min_pairs(epi_record)
+
+                if most_one == most_two:  # Mostly, this sample is non-recombinant
+                    continue
+                else:
+                    epiV = sort_humanly(epiV)
+                    for M in most_two:
+                        lin_A_draw, lin_B_draw = parental_lineage(M)
+                        lin_record, UA_mutate_unique, UB_mutate_unique, shared_mut, denovo_mut = calcul_bk(
+                            lin_A_draw, lin_B_draw, Lineage_v, epiV)
+
+                        lin_A_draw, lin_B_draw = qu_cluster(lin_A_draw), qu_cluster(lin_B_draw)
+                        # numA = unique_lin(linA_list_deep, Lineage_v,
+                        #                   UA_mutate_unique)
+                        # numB = unique_lin(linA_list_deep, Lineage_v,
+                        #                   UB_mutate_unique)
+
+                        # if numA == numB == 1:
+                        with open(output_file, "a+") as file_epi:
+                            file_epi.write(epi + "," + lin_A_draw + "," +
+                                            lin_B_draw + "," + lin_record +
+                                            "," + "/".join(UA_mutate_unique) +
+                                            "," + "/".join(UB_mutate_unique) +
+                                            "," + "/".join(shared_mut) + "," +
+                                            "/".join(denovo_mut) + "\n")
+        except:
+            continue

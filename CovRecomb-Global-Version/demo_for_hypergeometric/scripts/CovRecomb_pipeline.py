@@ -16,7 +16,7 @@ from multiprocessing import Process
 def main():
     parser = argparse.ArgumentParser(description='Read the qulified sequences.', usage='''python3 CovRecomb_pipeline.py''')
     
-    parser.add_argument("-dir", "--dirpath", default="/home/soniali/Desktop/CovRecomb-Global-Version/data/2022_02_12/", help="The totoal folder address of this work.\nDefault: /home/soniali/Desktop/CovRecomb-Global-Version/data/2022_02_12")
+    parser.add_argument("-dir", "--dirpath", default="/home/soniali/Desktop/03_CovRecomb_review0819/github/CovRecomb/CovRecomb-Global-Version/demo_for_hypergeometric/data/2022_02_12/", help="The totoal folder address of this work.\nDefault: /home/soniali/Desktop/CovRecomb-Global-Version/data/2022_02_12")
     parser.add_argument("-b", "--breakpoint_number", default=2, help="The maximum acceptable number of breakpoints among putative recombinants.\nDefault: 2")
     parser.add_argument("-t", "--threshold", default=4, help ="The least number of sequential feature mutations.\nDefault: 4")
     parser.add_argument("-c", "--core_number", default=16, help="The number of cores used while computation running.\nDefault: 4")
@@ -24,6 +24,7 @@ def main():
     args = parser.parse_args()
     
     dirpath = args.dirpath
+    # dirpath = "/home/soniali/Desktop/03_CovRecomb_review0819/github/CovRecomb-Global-Version/demo/data/2022_02_12/"
     os.chdir(dirpath.split("data/2022_02_12/")[0]+"scripts/")
     from functions_set import creat_dir
     from CovRecomb_detecion import recombination_detection
@@ -32,6 +33,7 @@ def main():
     dirpath_recomb = dirpath + "2_recomb_identified/"
     lineage_file = dirpath + '1_filtered_data/fv_norm_cluster.txt'
     output_file = dirpath_recomb + args.output_file
+    # output_file = dirpath_recomb + "0_putative_recombinants.csv"
     max_bk_num = int(args.breakpoint_number)
     len_UAB = int(args.threshold)
     cor_num = int(args.core_number)
@@ -62,7 +64,7 @@ def main():
     # read each sample's mutations
     Strain_list_snp = []
     variants_all = {}
-    with open(dirpath + "1_filtered_data/snp_norm.txt", "r") as f:
+    with open(dirpath + "1_filtered_data/snp_norm_demo.txt", "r") as f:
         for i in f.readlines():
             i_2 = i.split(':')
             Strain_list_snp.append(i_2[0])
@@ -75,7 +77,7 @@ def main():
     country = {}
     division = {} 
     pango_lineage = {}
-    with open(dirpath + "0_raw_data/metadata-2.tsv", "r") as f:
+    with open(dirpath + "0_raw_data/metadata-demo.tsv", "r") as f:
         next(f)
         for i in csv.reader(f, delimiter = '\t'):
             Strain_list_meta.append(i[2])
@@ -85,12 +87,12 @@ def main():
             division[i[2]] = i[11]
             pango_lineage[i[2]] = i[18]
 
-    Strain_list_2 = Strain_list_snp[int(len(Strain_list_snp)/1000*560)+1:int(len(Strain_list_snp)/1000*581)+1]
+    # Strain_list_snp = Strain_list_snp[int(len(Strain_list_snp)/1000*560)+1:int(len(Strain_list_snp)/1000*581)+1]
     
     must_inA = "X"*len_UAB
     must_inB = "Y"*len_UAB
     
-    print("Input genomes for CovRecomb: ",len(Strain_list_2),"\n")
+    print("Input genomes for CovRecomb: ",len(Strain_list_snp),"\n")
     print("Input genomes with metadata: ",len(Strain_list_meta),"\n")
     print("Candidate parental lineages: ",len(linA_list),"\n")
     print("Threshold for the continous feature mutations: ",str(len_UAB),"\n")
@@ -105,7 +107,7 @@ def main():
 
     for i in range(1,cor_num+1):
         globals()["p"+str(i)] = Process(target=recombination_detection, args=(len_UAB, max_bk_num, must_inA, must_inB, linA_list,\
-            Strain_list_2[(i-1)*int(len(Strain_list_2)/cor_num):i*int(len(Strain_list_2)/cor_num)],\ 
+            Strain_list_snp[(i-1)*int(len(Strain_list_snp)/cor_num):i*int(len(Strain_list_snp)/cor_num)],\
             collected_time, variants_all, feature_mutations, lin_time, Lineage_v, mutaions_num, output_file))
         
     for i in range(1,cor_num+1):

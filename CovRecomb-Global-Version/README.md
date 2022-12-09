@@ -85,5 +85,17 @@ python identify_breakpoints.py
 ```
 
 
+## Demo for the core algorithm in CovRecomb pipeline
+The ```/CovRecomb-Global-Version/demo_for_hypergeometric/``` folder presents an example of how the hypergeometric distribution functions in CovRecomb pipeline. Run the following code and the output will be show in ```/CovRecomb-Global-Version/demo_for_hypergeometric/data/2022_02_12/2_recomb_identified/0_putative_recombinants.csv```
+
+```
+cd ./CovRecomb/CovRecomb-Global-Version/demo_for_hypergeometric/scripts/
+python3 CovRecomb_pipeline.py -c 2
+```
+
+The terminal output will be similar to the following picture:
+<img src="demo_for_hypergeometric/demo_run.png"/>
+
+
 ## Acknowledgements
 We sincerely thank the Global Intiative on Sharing All Influenza Data ([GISAID](https://www.gisaid.org/)) and all data contributors for making SARS-CoV-2 genomic sequence data available to the public and open science.
