@@ -25,8 +25,7 @@ multiprocessing
 ```
 
 ## Install 
-You need to download the "CovRecomb-Local-Version" zip and use the command line below to install the CovRecomb-Local-Version.
-
+You need to download the "CovRecomb-Local-Version" zip and use the command line below to install the CovRecomb-Local-Version. The required installation time is less than 30 seconds on a "normal" desktop computer.
 ```
 cd CovRecomb-Local-Version
 sudo python3 setup.py install
