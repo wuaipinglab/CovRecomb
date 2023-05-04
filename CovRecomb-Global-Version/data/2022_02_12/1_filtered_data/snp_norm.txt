@@ -1,1 +1,0 @@
-The "snp_norm.txt" contains normalized mutations of each sequencing genome from the "msa_0220.fasta", while the latter were sourced from the Global initiative on sharing all influenza data (GISAID) database (Elbe and Buckland-Merrett, 2017) (https://www.gisaid.org/) via the provided interface.

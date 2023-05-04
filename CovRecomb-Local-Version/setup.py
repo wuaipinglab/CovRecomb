@@ -14,7 +14,7 @@ setup(
     name='CovRecomb',
     version=__version__,
     packages=find_packages(),
-    scripts=["scripts/CovRecomb_detecion.py", "scripts/function_set.py"],
+    scripts=["scripts/function_set.py"],
     install_requires=["biopython>=1.70"],
     description='To identify the putative inter-lineage SARS-CoV-2 recombinants among consensus sequences inputted by users.',
     # url='https://github.com/wuaipinglab/CovRecomb-Local-Version.git',

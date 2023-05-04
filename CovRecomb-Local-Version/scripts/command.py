@@ -12,9 +12,7 @@ import argparse
 from multiprocessing import Pool, Process
 
 os.chdir(os.getcwd() + "/")
-from function_set import normalize_position
-from CovRecomb_detecion import recombination_detection
-
+from function_set import normalize_position, recombination_detection
 
 def read_seq(sequence_path, REF, times):
     '''
@@ -162,13 +160,13 @@ def feature_mut(DIRPATH, lineage_file):
     '''
 
     Lineage_v = {}
-    linA_list = []
+    lin_list = []
     feature_mutations = []
     with open(DIRPATH + lineage_file, 'r') as f:
         for i in csv.reader(f):
             if i[2] != "":
                 if len(i[2:]) >= 1:
-                    linA_list.append(i[0])
+                    lin_list.append(i[0])
                     Lineage_v[i[0]] = i[2:]
                     for v in i[2:]:
                         if v not in feature_mutations:
@@ -176,12 +174,12 @@ def feature_mut(DIRPATH, lineage_file):
 
     mutaions_num = len(feature_mutations)
 
-    return linA_list, Lineage_v, mutaions_num, feature_mutations
+    return lin_list, Lineage_v, mutaions_num, feature_mutations
 
 
 def mafft_to_snp_norm(sequence_path,
                       self_path,
-                      len_UAB,
+                      len_UXY,
                       cor_num,
                       REF="EPI_ISL_402125"):
     '''
@@ -189,7 +187,7 @@ def mafft_to_snp_norm(sequence_path,
 
     :param sequence_path: str, the file address and the filename of the input .fasta file
     :param self_path: the file address of the input .fasta file
-    :param len_UAB: int, the least number of the sequential feature mutations  
+    :param len_UXY: int, the least number of the sequential feature mutations  
     :param REF: str, the name of the reference seq
     '''
     snps_norm_path = self_path + "snp_norm.txt"
@@ -223,7 +221,7 @@ def mafft_to_snp_norm(sequence_path,
     for id in seq_snps:
         mut = seq_snps[id]
         nor_snp = normalize_position(mut, 266, 29674)
-        if nor_snp.count(",") + 1 < (2 * len_UAB):
+        if nor_snp.count(",") + 1 < (2 * len_UXY):
             continue
         else:
             with open(snps_norm_path, "a+") as fsn:
@@ -283,11 +281,11 @@ def main():
     download_path = args.file_address  #"example_project/input_file/Example_aligned_trimed.fasta"
     file_path = args.alignment
     sequence_path = download_path + file_path
-    output_file = download_path + args.output_file  #
+    output_file = download_path + args.output_file  
 
     REF = args.reference
     max_bk_num = int(args.breakpoint_number)
-    len_UAB = int(args.threshold)
+    len_UXY = int(args.threshold)
     cor_num = int(args.core_number)
 
     print("\n", "----------------------- STEP1: Date filtration and mutations extraction ------------------")
@@ -300,7 +298,7 @@ def main():
     if os.path.exists(self_path + "snp_norm.txt"):
         os.remove(self_path + "snp_norm.txt")
 
-    mafft_to_snp_norm(sequence_path, self_path, len_UAB, cor_num, REF)
+    mafft_to_snp_norm(sequence_path, self_path, len_UXY, cor_num, REF)
     Self_snp = []
     Self_variants = {}
     with open(self_path + "snp_norm.txt", "r") as f:
@@ -310,24 +308,24 @@ def main():
             Self_variants[i_2[0]] = i_2[1].strip().split(',')
 
     print("\n", "----------------------- STEP2: Get the lineage-defining feature mutations -------------", "\n")
-    lineage_file = 'defaults/LDFM_Feb11_2022.txt'
-    linA_list, Lineage_v, mutaions_num, feature_mutations = feature_mut(
+    lineage_file = 'defaults/LDFM_Feb08_2023.txt'
+    lin_list, Lineage_v, mutaions_num, feature_mutations = feature_mut(
         download_path, lineage_file)
-    print("The number of candidate parental lineages (Last updated date: Feb 22, 2022): ", len(linA_list), "\n")
+    print("The number of candidate parental lineages (Last updated date: Feb 08, 2023): ", len(lin_list), "\n")
 
     print("\n", "----------------------- STEP3: CovRecomb analysis -------------------------------------", "\n")
     print("The number of inputted genomes for CovRecomb pipline: ", len(Self_snp), "\n")
-    print("The least number of the sequential feature mutations: ", str(len_UAB), "\n")
+    print("The least number of the sequential feature mutations: ", str(len_UXY), "\n")
     print("The number of computational core used: ", str(cor_num), "\n")
 
     # the least number of sequential feature mutation must included in feature mutation pattern
-    must_inA = "X" * len_UAB
-    must_inB = "Y" * len_UAB
+    must_inA = "X" * len_UXY
+    must_inB = "Y" * len_UXY
 
     # the output file
     col_names = [
-        'sample_id', 'lineage_X', 'lineage_Y', 'mutation_patern',
-        "X_mutations", "Y_mutations", "shared_mutations", "denovo_mutations"
+        'sample_id','lineage_X', 'lineage_Y', \
+    'mutation_pattern', "raw_p_value","adjusted_p_value","X_mutations", "Y_mutations", "shared_mutations", "denovo_mutations"
     ]
     with open(output_file, "w") as file_epi:
         for c in col_names[0:-1]:
@@ -337,15 +335,13 @@ def main():
     os.chdir(os.getcwd() + "/")
 
     if len(Self_snp) <= cor_num:
-        recombination_detection(len_UAB, max_bk_num, must_inA, must_inB, linA_list,
-                                Self_snp, Self_variants, feature_mutations,
-                                Lineage_v, mutaions_num, output_file)
+        recombination_detection(Self_snp, Self_variants, Lineage_v, lin_list, must_inA,must_inB,feature_mutations, output_file, mutaions_num,max_bk_num,len_UXY)
     else:
         for i in range(1, cor_num + 1):
             globals()["p"+str(i)] = Process(target=recombination_detection,\
-                args=(len_UAB, max_bk_num, must_inA, must_inB, linA_list, Self_snp[(i-1)*int(len(Self_snp)/cor_num):i*int(len(Self_snp)/cor_num)],\
-                Self_variants, feature_mutations, Lineage_v, mutaions_num, output_file))
-
+                args=(Self_snp[(i-1)*int(len(Self_snp)/cor_num):i*int(len(Self_snp)/cor_num)],\
+                    Self_variants, Lineage_v, lin_list, must_inA,must_inB,feature_mutations, output_file, mutaions_num,max_bk_num,len_UXY))
+                
         for i in range(1, cor_num + 1):
             eval("p" + str(i)).start()
 

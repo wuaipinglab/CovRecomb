@@ -15,7 +15,6 @@ The CovRecomb-Global-Version has been tested on the Linux: Ubuntu 20.04 system.
 ### Dependencies
   - python>=3.6
   - biopython>=1.70
-  - R>=3.6.0
 
 ### Python Dependencies
 The CovRecomb-Global-Version mainly depends on the Python scientific stack.
@@ -26,15 +25,9 @@ numpy
 collections
 datetime
 Bio
+scipy
 multiprocessing
 ```
-### R Dependencies
-The CovRecomb-Global-Version used the R version 4.1.2 to run ```paired_patterns.r```. The following R packages are needed.
-```
-optparse
-ggplot2
-```
-
 
 ## Workflow
 <img src="img/workflow.png"/>
@@ -44,8 +37,7 @@ ggplot2
 - Date acquisition and filteration. 
 - Exaction of mutations.
 ```
-python fasta_clean_get_FM.py
-python pos_norm.py
+run_nextclade.sh
 ```
 
 ### STEP 2: Construction: construct the lineage-defining library
@@ -53,8 +45,7 @@ python pos_norm.py
 - Cluster lineages with similar lineage-defining mutations.
 - Parameter settings
 ```
-python cluster_lineage.py
-python least_number_of_FV.py
+data_preparation.py
 ```
 
 ### STEP 3 & 4 & 5 
@@ -63,8 +54,8 @@ python least_number_of_FV.py
 - STEP 4: Mapping: map samples’ mutations against the predefined matrix
 - STEP 5: Determination: determine the optimal lineage-paired combinations
 ```
-python CovRecomb_pipeline.py
-python confirm_epi_context.py
+CovRecomb_screen.py
+CovRecomb_confirm.py
 ```
 
 ### STEP 6: Identification of independent recombination events
@@ -72,30 +63,8 @@ python confirm_epi_context.py
 - Detect the linegae or variant paired patterns among the detected independent recombination events.
 - Draw heatmap(s) for representing the lineage(and variant)-preference of recombination events.
 ```
-python identify_patterns.py
-python lineage_paired.py
-Rscript paired_patterns.r
+identify_events.py 
 ```
-
-### STEP 7: Identification of the breakpoint distribution with the help of 3SEQ
-- Detect the breakpoint distribution of the independent recombination events with the help of 3SEQ.
-
-```
-python identify_breakpoints.py 
-```
-
-
-## Demo for the core algorithm in CovRecomb pipeline
-The ```/CovRecomb-Global-Version/demo_for_hypergeometric/``` folder presents an example of how the hypergeometric distribution functions in CovRecomb pipeline. Run the following code and the output will be same as ```/CovRecomb-Global-Version/demo_for_hypergeometric/data/2022_02_12/2_recomb_identified/0_putative_recombinants_example.csv```
-
-```
-cd ./CovRecomb/CovRecomb-Global-Version/demo_for_hypergeometric/scripts/
-python3 CovRecomb_pipeline.py -c 2
-```
-
-The terminal output will be similar to the following picture:
-<img src="demo_for_hypergeometric/demo_run.png"/>
-
 
 ## Acknowledgements
 We sincerely thank the Global Intiative on Sharing All Influenza Data ([GISAID](https://www.gisaid.org/)) and all data contributors for making SARS-CoV-2 genomic sequence data available to the public and open science.
