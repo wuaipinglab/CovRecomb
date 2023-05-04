@@ -24,7 +24,7 @@ The Global-Version is designed for authors to update the global results of SARS-
 
 
 ### Framework
-<img src="img/framework.pdf"/>
+<img src="img/framework.png"/>
 
 ### Usage details
 Click the ([CovRecomb-Global-Version](https://github.com/wuaipinglab/CovRecomb/tree/main/CovRecomb-Global-Version)) folder to see the specific usage steps for the CovRecomb-Global-Version.
