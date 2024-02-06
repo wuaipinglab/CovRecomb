@@ -1,0 +1,18 @@
+Trial,Sample_size,Method,TPR,FPR,FDR,Accurate_rate,Microseconds,Seconds
+gener6,285.4,CovRecomb,0.6139,0.0946,0.3578,0.8395,6425.6798,6.424
+gener6,285.4,3SEQ,0.9569,0.0501,0.1966,0.0882,2090.1228,2.09
+gener7,569.8,CovRecomb,0.6045,0.0496,0.2461,0.9053,12544.4134,12.546
+gener7,569.8,3SEQ,0.9525,0.0119,0.0566,0.0068,6902.7854,6.904
+gener8,1139.6,CovRecomb,0.6018,0.0056,0.034,0.9709,25902.5558,25.904
+gener8,1139.6,3SEQ,0.9552,0.003,0.014,0,80888.7556,80.888
+gener9,2294.6,CovRecomb,0.565,0,0,0.9942,51419.8706,51.42
+gener9,2294.6,3SEQ,0.9565,0.0004,0.0021,0,704361.1264,704.362
+gener10,4602.2,CovRecomb,0.6026,0,0,0.9837,105198.7224,105.198
+gener10,4602.2,3SEQ,0.9375,0.0001,0.0005,0,4709025.657,4709.024
+gener11,9209.4,CovRecomb,0.5933,0,0,0.9863,208166.7348,208.168
+gener11,9209.4,3SEQ,0.9281,0,0.0001,0,35918511.89,35918.516
+,,,,,,,,
+,,,,,,,,
+"1. ""gener6"" means there were six generation times in simulation generation process, the more generation number was, the more samples generated.",,,,,,,,
+"2. Values [sample_size, true positive rate (TPR), false positive rate (FPR),  false discovery rate (FDR), Accurate_rate, Microseconds, Seconds] in each row were the average results of five random trials. ",,,,,,,,
+"3. ""Accurate_rate"" means the recognition accuracy of the parental lineages among the correctly identified recombinants",,,,,,,,

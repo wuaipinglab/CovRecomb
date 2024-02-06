@@ -1,0 +1,54 @@
+X_recombinant_lineage,recombinants_included_for_analysis,identified_as_recombinant_by_CovRecomb,identified_rate,acknowledge_parents,mostly_identified_parents,samples_with_the_most_identified_parental_lineages,samples_rate_with_the_mostly_identified_parental_lineages,other_identified_parents,comprehensive_consistency
+XAQ,81,81,1,"BA.1*,BA.2*","BA.1.9, BA.2.23",69,0.851851852,"BA.1.9, BA.2.9*; BA.1.9, BA.2.31",yes
+XBB.1.2,5,5,1,"BJ.1, BM.1.1.1","BJ.1, BM.1.1.1",5,1,none,yes
+XBB.1.3,45,45,1,"BJ.1, BM.1.1.1","BJ.1, BM.1.1.1",44,0.977777778,"BA.2.75, BJ.1",yes
+XBB.3.1,64,64,1,"BJ.1, BM.1.1.1","BJ.1, BM.1.1.1",64,1,none,yes
+XBB.4.1,9,9,1,"BJ.1, BM.1.1.1","BJ.1, BM.1.1.1",9,1,none,yes
+XBB.5,38,38,1,"BJ.1, BM.1.1.1","BJ.1, BM.1.1.1",36,0.947368421,"BA.2.37*, BJ.1; BA.2.75, BJ.1",yes
+XBC,7,7,1,"BA.2*,AY.*,BA.2*,AY.*","AY.66, BA.1.1*",6,0.857142857,"AY.75*, BA.1.1*; AY.75*, B.1.1.529; AY.66, BA.1.13*; AY.35*, BA.2.75.3.1.1.1",no
+XC,24,24,1,"AY.29,B.1.1.7","AY.29.1, B.1.1.7*",24,1,none,yes
+XK,18,18,1,"BA.1*,BA.2*","BA.1.9, BA.2.25",12,0.666666667,"BA.1.9, BA.2.9*",yes
+XV,42,42,1,"BA.1*,BA.2*","BA.1.9, BA.2.9*",33,0.785714286,"BA.1.9, BA.2.14*; BA.1.9, BA.2.16; BA.1.9, BA.2.7*; BA.1.9, BA.2.25",yes
+XBB.1.4.1,1059,1055,0.9962,"BJ.1, BM.1.1.1","BJ.1, BM.1.1.1",930,0.881516588,"BA.2.37*, BJ.1; BA.2.38, BJ.1; BA.2.75, BJ.1; BA.2.17, BJ.1",yes
+XAL,124,123,0.9919,"BA.1*,BA.2*","BA.1.1*, BA.2.23",102,0.829268293,"BA.1.1*, BA.2.56; BA.1.9, BA.2.17; BA.1.1*, BA.2.3.16; BA.1.1*, BA.2.31; BA.1.1.7, BA.2.23",yes
+XBB.1.5,17896,17700,0.989,"BJ.1, BM.1.1.1","BJ.1, BM.1.1.1",17323,0.978700565,"BA.2.17, BJ.1; BA.2.38, BJ.1; BA.2.75, BJ.1; BA.2.37*, BJ.1; BA.2.75.2*, BJ.1; BA.2, BJ.1; BJ.1, BL.4; BJ.1, BM.1; BJ.1, BN.1.3.1*",yes
+XJ,254,250,0.9843,"BA.1*,BA.2*","BA.1.9, BA.2.9*",222,0.888,"BA.1.9, BA.2.25; BA.1.9, BA.2.7*; BA.1.9, BA.2.31; BA.1.9, BA.2.45; BA.1.9, BA.2.23; BA.1.9, BA.2.17; BA.1.9, BA.2.16; BA.1.9, BA.2.14*; BA.1.9, BA.2.69",yes
+XBB.1.1,1024,1004,0.9805,"BJ.1, BM.1.1.1","BJ.1, BM.1.1.1",985,0.981075697,"BA.2.75, BJ.1; BA.2.38, BJ.1; BA.2.37*, BJ.1; BJ.1, BM.1",yes
+XBB.1.4,342,335,0.9795,"BJ.1, BM.1.1.1","BJ.1, BM.1.1.1",313,0.934328358,"BA.2.75, BJ.1; BA.2.17, BJ.1; BA.2.37*, BJ.1",yes
+XAW,45,44,0.9778,"BA.2*,AY.122","AY.122.4, BA.2.3.16",44,1,none,yes
+XB,3476,3378,0.9718,"B.1.634,B.1.631","B.1.631, B.1.634",3328,0.985198342,"B.1.627, B.1.634; B.1.1.7*, B.1.631; B.1.1.7*, B.1.634",yes
+XBB.1,21744,21125,0.9715,"BJ.1, BM.1.1.1","BJ.1, BM.1.1.1",20450,0.968047337,"BA.2.75, BJ.1; BA.2.38, BJ.1; BA.2.37*, BJ.1; BA.2.17, BJ.1; BJ.1, BL.4; BJ.1, BM.1.1*; CR.1.1*, BM.1.1.1; BA.2, BJ.1; BJ.1, BM.1; BM.1.1.1, BQ.1.18; BA.5.2.2, BM.1.1.1; BA.2.75.2*, BJ.1; BA.2.45, BJ.1; BJ.1, BN.1.3*",yes
+XBB.2,7440,7227,0.9714,"BJ.1, BM.1.1.1","BJ.1, BM.1.1.1",7041,0.97426318,"BA.2.38, BJ.1; BA.2.37*, BJ.1; BA.2.75, BJ.1; BA.2.17, BJ.1; BJ.1, BL.4; BA.2.75.2*, BJ.1; BJ.1, BM.1.1*; BA.2, BJ.1",yes
+XAF,301,292,0.9701,"BA.1*,BA.2*","BA.1.1.7, BA.2.9*",286,0.979452055,"BA.1.1.7, BA.2.9.1; BA.1.1.7, BA.2.69; BA.1.9, BA.2.9*",yes
+XY,124,119,0.9597,"BA.1*,BA.2*","BA.1.1*, BA.2.9*",89,0.74789916,"BA.1.1*, BA.2.7*; BA.1.1.7, BA.2.7*; BA.1.9, BA.2.69; BA.1.1.7, BA.2.25; BA.1.1.7, BA.2.9*; BA.1.9, BA.2.9*; BA.1.9, BA.2.25; BA.1.1*, BA.2.31; BA.1.1.7, BA.2.69; BA.1.1*, BA.2.23",yes
+XA,45,43,0.9556,"B.1.1.7,B.1.177","B.1.1.7*, B.1.177.18",43,1,none,yes
+XBB,2520,2391,0.9488,"BJ.1,BM.1.1.1","BJ.1, BM.1.1.1",2293,0.959012965,"BJ.1, BM.1.1*; BA.2.75, BJ.1; BA.2.38, BJ.1; BA.2.17, BJ.1; BA.2.37*, BJ.1; BJ.1, BL.4; BA.2.75.6, BJ.1; BA.2.75.4, BM.1.1.1; BA.2.75.2*, BJ.1",yes
+XBB.3,1366,1295,0.948,"BJ.1, BM.1.1.1","BJ.1, BM.1.1.1",1233,0.952123552,"BA.2.38, BJ.1; BA.2.75, BJ.1; BJ.1, BL.4; BA.2.37*, BJ.1; BA.2.17, BJ.1; BA.2.75.4, BM.1.1.1",yes
+XH,169,159,0.9408,"BA.1*,BA.2*","BA.1.9, BA.2.9*",158,0.993710692,"BA.1.9, BA.2.37*; BA.1.9, BA.2; BA.1.9, BA.2.69",yes
+XM,504,474,0.9405,"BA.1.1*,BA.2*","BA.1.1*, BA.2.23",329,0.694092827,"BA.1.9, BA.2.17; BA.1.1*, BA.2.56; BA.1.1.7, BA.2.23; BA.1.1*, BA.2.3.1*; BA.1.1*, BA.2.31; BA.1.1*, BA.2.9*; BA.1.1*, BA.2.3.16; BA.1.9, BA.2.23; BA.1.1*, BA.2.7*; BA.1.1*, BA.2.69; BA.1.9, BA.2.56; BA.1.1*, BA.2.16; BA.1.1.7, BA.2.17; BA.1.9, BA.2.37*; BA.1.1*, BA.2.37*",yes
+XBB.4,336,315,0.9375,"BJ.1, BM.1.1.1","BJ.1, BM.1.1.1",305,0.968253968,"BA.2.38, BJ.1; BA.2.75, BJ.1; BA.2.17, BJ.1",yes
+XBC.2,102,93,0.9118,"BA.2*,AY.*,BA.2*,AY.*","AY.66, BA.1.1*",79,0.849462366,"AY.75*, BA.1.1*; AY.75*, B.1.1.529; AY.66, BA.1.13*; AY.35*, BA.2.75.3.1.1.1",no
+XD,33,30,0.9091,"AY.*,BA.1*","AY.4.11, BA.1.1*",29,0.966666667,"AY.4.11, BA.1.13*",yes
+XBJ,149,133,0.8926,"BA.2.3.20,BA.5.2","CM.2*, BA.5.2*",131,0.984962406,"CM.2*, DB.1*",yes
+XBD,308,273,0.8864,"BA.2.75.2,BF.5","BA.2.75.2*, BF.3.1*",272,0.996336996,"BA.2.75.2*, BA.5.2.1*",yes
+XE,2761,2427,0.879,"BA.1*,BA.2*","BA.1.9, BA.2.23",2283,0.940667491,"BA.1.9, BA.2.31; BA.1.9, BA.2.69; BA.1.9, BA.2; BA.1.9, BA.2.56; BA.1.9, BA.2.17; BA.1.9, BA.2.16; BA.1.9, BA.2.25; BA.1.9, BA.2.25.1; BA.1.9, BA.2.3.16; BA.1.9, BA.2.9*",yes
+XBE,187,156,0.8342,"BA.5.2,BE.4.1","BA.5.2.2, BE.4.1.1",156,1,none,yes
+XAJ,99,77,0.7778,"BA.2.12.1*,BA.4*","BA.5, BG.3",62,0.805194805,"BA.5, BG.4; BA.2.17, BA.5; BA.2.12.1*, BA.4.5",yes
+XS,60,13,0.2167,"AY.*,BA.1.1*","AY.112*, BA.1.1*",12,0.923076923,"AY.4, BA.1.1*",yes
+XAK,148,28,0.1892,"BA.2*,BA.1*,BA.2*","BA.2.3.16, BA.2.38.4",28,1,none,no
+XAG,423,38,0.0898,"BA.1*,BA.2*","BA.1.1*, BA.2.9*",25,0.657894737,"BA.1.1*, BA.2.7*; BA.1.1*, BA.2.31; BA.1.1*, BA.2.23",yes
+XAN,215,19,0.0884,"BA.2*,BA.5.1","BA.5.1.12, BF.20",9,0.473684211,"BA.5.1.12, BF.31; BA.4.1*, BA.5.1.12",no
+XBC.1,960,64,0.0667,"BA.2*,AY.*,BA.2*,AY.*","AY.66, BA.1.1*",15,0.234375,"AY.42, BA.2.23; AY.4.2*, BA.3.1; AY.4.2*, BA.1.1*; AY.35*, BM.1.1.1; AY.116*, BA.2.23; AY.112*, BA.2.23; AY.75*, B.1.1.529; AY.4.2*, BA.1.13*; AY.42, BA.1.1*; AY.75*, BA.1.1*",yes
+XAB,116,5,0.0431,"BA.1*,BA.2*","BA.1.1*, BA.2.31",2,0.4,"BA.1.1*, BA.2.7*",yes
+XN,279,11,0.0394,"BA.1*,BA.2*","BA.2.3.16, BA.2.69",11,1,none,no
+XAS,220,6,0.0273,"BA.5*,BA.2*","BA.2.17, BA.5",4,0.666666667,"BA.2.17, BA.5.2.1*; BA.2.3.16, BA.5.2.2",yes
+XAE,131,3,0.0229,"BA.2*,BA.1*","B.1.1.322, BA.2.3.16",3,1,none,yes
+XAM,554,12,0.0217,"BA.1.1,BA.2.9","BA.1.1*, BA.2.9*",12,1,none,yes
+XBF,4154,8,0.0019,"BA.5.2.3,CJ.1","BM.1.1*, BQ.2",8,1,none,yes
+,,,,,,,,,
+"1. ""identified_rate"" = ""identified_as_recombinant_by_CovRecomb"" / ""recombinants_included_for_analysis""",,,,,,,,,
+"2. ""samples_rate_with_the_most_identified_parental_lineages"" =  ""samples_with_the_most_identified_parental_lineages"" /  ""identified_as_recombinant_by_CovRecomb""",,,,,,,,,
+"3. The writing order of the two lineages listed in ""mostly_identified_parents"" is independent of the genome position of SARS-CoV-2.",,,,,,,,,
+"4. ""mostly_identified_parents"" means the identified parental lineages for most of the recombinants.",,,,,,,,,
+"5. The ""acknowledge_parents"" for each recombination lineage is downloaded from https://github.com/cov-lineages/pango-designation/blob/master/pango_designation/alias_key.json on Mar 28, 2023.",,,,,,,,,
+"6. The transformation for parts of lineages' abbreviation is referenced from https://github.com/cov-lineages/pango-designation/blob/master/lineage_notes.txt on Mar 28, 2023.",,,,,,,,,
