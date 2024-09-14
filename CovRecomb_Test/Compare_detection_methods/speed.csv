@@ -1,0 +1,5 @@
+turns,method,sample_size,tpr,time_microsecond,time_second,time_minute,time_hour,accuracy_of_parental_lineages,core
+turns1,recombinhunt,72,0.6944444444444444,3522332.545,3522.33,58.71,0.98,0.56,1
+turns2,recombinhunt,144,0.6875,6906138.81,6906.14,115.1,1.92,0.5050505050505051,1
+turns3,recombinhunt,216,0.6388888888888888,9980441.077,9980.44,166.34,2.77,0.5,1
+turns4,recombinhunt,360,0.6777777777777778,16370062.175,16370.06,272.83,4.55,0.5122950819672131,1
